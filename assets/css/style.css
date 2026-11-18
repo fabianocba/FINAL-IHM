@@ -1,1 +1,66 @@
 /* Os estilos do projeto serão desenvolvidos posteriormente. */
+.cabecalho{
+    background: linear-gradient(to right, #154072, #35c7a5);
+    padding: 20px;
+    text-align: center;
+}
+.cabecalho img{
+width: 200px;
+height: 100px;
+object-fit: cover;
+object-position: center;
+}
+
+.formulario p{
+text-align: center;
+color: gray;
+}
+
+.formulario h2{
+    text-align: center;
+    background: linear-gradient(to right, #154072, #35c7a5);
+    -webkit-background-clip: text;
+   -webkit-text-fill-color:transparent;
+   font-size: larger;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.formulario label{
+    display: block;
+    margin-top: 5px;
+    color: gray;
+}
+.formulario input{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid;
+    
+}
+.entrar{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    background: linear-gradient(to right, #154072, #35c7a5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.whatsApp{
+    width: 60%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    
+}
+
