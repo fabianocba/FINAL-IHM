@@ -52,6 +52,7 @@ color: gray;
     font-size: 16px;
 }
 .whatsApp{
+    background-color: white;
     width: 60%;
     padding: 8px;
     box-sizing: border-box;
@@ -64,3 +65,25 @@ color: gray;
     
 }
 
+.divisor {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.divisor::before,
+.divisor::after {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+}
+
+.divisor span {
+    font-size: 14px;
+    color: #777;
+    white-space: nowrap;
+}
