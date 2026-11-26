@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meus Agendamentos | Clínica Saúde+</title>
+
+    <link rel="stylesheet" href="agendamentos.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container navegacao">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icone">✚</span>
+                <span>Clínica <strong>Saúde+</strong></span>
+            </a>
+
+            <nav class="menu">
+                <a href="index.html">Início</a>
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#sobre">Sobre nós</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+
+            <a href="meusagendamentos.html" class="botao-agendar ativo">
+                Meus agendamentos
+            </a>
+
+        </div>
+    </header>
+
+<main>
+
+    <section class="pagina-agendamentos">
+
+        <div class="container">
+
+            <div class="titulo-agendamentos">
+                <span class="subtitulo">ORGANIZE SEU CUIDADO</span>
+
+                <h1>Meus agendamentos</h1>
+
+                <p>
+                    Acompanhe suas consultas e cuide da sua saúde
+                    com praticidade e tranquilidade.
+                </p>
+            </div>
+
+            <div class="acoes-agendamento">
+
+                <div>
+                    <h2>Suas consultas</h2>
+                    <p>Visualize e acompanhe seus agendamentos.</p>
+                </div>
+
+                <a href="#novo-agendamento" class="botao-principal">
+                    + Novo agendamento
+                </a>
+
+            </div>
+
+        </div>
+    
+<div class="lista-consultas">
+
+    <article class="card-consulta">
+
+        <div class="consulta-topo">
+            <span class="status-confirmado">Consulta confirmada</span>
+            <span class="consulta-codigo">#CS001</span>
+        </div>
+
+        <div class="consulta-info">
+            <div class="consulta-icone">✚</div>
+
+            <div>
+                <h3>Consulta Clínica Geral</h3>
+                <p>Dr. João Martins</p>
+            </div>
+        </div>
+
+        <div class="consulta-detalhes">
+            <div>
+                <span>Data</span>
+                <strong>28/11/2026</strong>
+            </div>
+
+            <div>
+                <span>Horário</span>
+                <strong>09:30</strong>
+            </div>
+
+            <div>
+                <span>Modalidade</span>
+                <strong>Presencial</strong>
+            </div>
+        </div>
+
+        <div class="consulta-rodape">
+            <a href="#" class="link-detalhes">Ver detalhes</a>
+            <button class="botao-cancelar" type="button">
+                Cancelar consulta
+            </button>
+        </div>
+
+    </article>
+
+    <article class="card-consulta">
+
+        <div class="consulta-topo">
+            <span class="status-pendente">Aguardando confirmação</span>
+            <span class="consulta-codigo">#CS002</span>
+        </div>
+
+        <div class="consulta-info">
+            <div class="consulta-icone">♡</div>
+
+            <div>
+                <h3>Consulta Cardiologia</h3>
+                <p>Dra. Mariana Costa</p>
+            </div>
+        </div>
+
+        <div class="consulta-detalhes">
+            <div>
+                <span>Data</span>
+                <strong>02/12/2026</strong>
+            </div>
+
+            <div>
+                <span>Horário</span>
+                <strong>14:00</strong>
+            </div>
+
+            <div>
+                <span>Modalidade</span>
+                <strong>Online</strong>
+            </div>
+        </div>
+
+        <div class="consulta-rodape">
+            <a href="#" class="link-detalhes">Ver detalhes</a>
+            <button class="botao-cancelar" type="button">
+                Cancelar consulta
+            </button>
+        </div>
+
+    </article>
+
+</div>
+
+    </section>
+     
+<section class="novo-agendamento" id="novo-agendamento">
+
+    <div class="container">
+
+        <div class="titulo-secao">
+            <span class="subtitulo">É simples cuidar de você</span>
+            <h2>Agende sua consulta</h2>
+            <p>Preencha as informações abaixo para solicitar seu atendimento.</p>
+        </div>
+
+        <div class="formulario-card">
+
+            <form id="formAgendamento">
+
+                <div class="campo-formulario">
+                    <label for="especialidade">Especialidade médica</label>
+
+                    <select id="especialidade" required>
+                        <option value="">Selecione uma especialidade</option>
+                        <option value="Clínica Geral">Clínica Geral</option>
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Dermatologia">Dermatologia</option>
+                        <option value="Ginecologia">Ginecologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="profissional">Profissional</label>
+
+                    <select id="profissional" required>
+                        <option value="">Selecione um profissional</option>
+                        <option value="Dr. João Martins">Dr. João Martins</option>
+                        <option value="Dra. Mariana Costa">Dra. Mariana Costa</option>
+                        <option value="Dra. Ana Oliveira">Dra. Ana Oliveira</option>
+                    </select>
+                </div>
+
+                <div class="campos-linha">
+
+                    <div class="campo-formulario">
+                        <label for="data">Data da consulta</label>
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="horario">Horário</label>
+                        <select id="horario" required>
+                            <option value="">Selecione</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="modalidade">Modalidade de atendimento</label>
+
+                    <select id="modalidade" required>
+                        <option value="">Selecione a modalidade</option>
+                        <option value="Presencial">Presencial</option>
+                        <option value="Online">Online</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="botao-enviar">
+                    Solicitar agendamento →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+    <footer>
+    </footer>
+
+    <script src="js/agendamentos.js"></script>
+
+</body>
+</html>

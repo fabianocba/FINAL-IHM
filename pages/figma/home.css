@@ -1,0 +1,772 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5FBF9;
+    color: #183B50;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 20px 6%;
+    box-shadow: 0 2px 15px rgba(24, 59, 80, 0.06);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* LOGOTIPO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #183B50;
+    font-size: 21px;
+    white-space: nowrap;
+}
+
+.logo strong {
+    color: #43AAA1;
+}
+
+.logo-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: #DFF5F0;
+    color: #319D93;
+    font-size: 25px;
+}
+
+/* MENU */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #526A78;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #319D93;
+}
+
+/* BOTÃO */
+
+.botao-agendar {
+    background-color: #43AAA1;
+    color: #FFFFFF;
+    padding: 13px 21px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.botao-agendar:hover {
+    background-color: #318F87;
+    transform: translateY(-2px);
+}
+
+/* BANNER PRINCIPAL */
+
+.hero {
+    background: linear-gradient(
+        120deg,
+        #E8F8F5,
+        #F5FCFA,
+        #D9F2EF
+    );
+    padding: 85px 6%;
+    overflow: hidden;
+}
+
+.hero-conteudo {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-texto {
+    max-width: 600px;
+}
+
+.selo-campanha {
+    display: inline-block;
+    background-color: #CFF3E4;
+    color: #238B72;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.hero-texto h1 {
+    color: #183B50;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero-texto h1 span {
+    color: #35AAA0;
+}
+
+.hero-texto > p {
+    color: #637984;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.botao-principal {
+    background-color: #39AAA0;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #288C84;
+    transform: translateY(-3px);
+}
+
+.botao-secundario {
+    color: #318F87;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 5px;
+}
+
+/* ÁREA VISUAL */
+
+.hero-visual {
+    min-height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circulo-decorativo {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #A9E8DC,
+        #65C6B8
+    );
+    position: absolute;
+}
+
+.icone-medico {
+    position: relative;
+    z-index: 1;
+    width: 210px;
+    height: 250px;
+    border-radius: 100px 100px 35px 35px;
+    background: linear-gradient(
+        145deg,
+        #FFFFFF,
+        #DDF5F0
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(30, 100, 100, 0.13);
+}
+
+.icone-medico span {
+    font-size: 100px;
+    color: #35AAA0;
+}
+
+.cartao-cuidado {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: white;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(24, 59, 80, 0.12);
+}
+
+.coracao {
+    font-size: 35px;
+    color: #39AAA0;
+}
+
+.cartao-cuidado strong {
+    color: #183B50;
+    font-size: 13px;
+}
+
+.cartao-cuidado p {
+    color: #82939B;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.frase-decorativa {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    color: #318F87;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* BENEFÍCIOS */
+
+.beneficios {
+    background-color: #FFFFFF;
+    padding: 28px 6%;
+}
+
+.beneficios-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.beneficio > span {
+    font-size: 32px;
+    color: #39AAA0;
+}
+
+.beneficio strong {
+    color: #183B50;
+    font-size: 14px;
+}
+
+.beneficio p {
+    color: #82939B;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    .hero-conteudo {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-texto {
+        margin: auto;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 320px;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .hero-texto h1 {
+        font-size: 39px;
+    }
+
+    .hero-texto > p {
+        font-size: 15px;
+    }
+
+    .hero-botoes {
+        flex-direction: column;
+    }
+
+    .botao-principal,
+    .botao-secundario {
+        width: 100%;
+        text-align: center;
+    }
+
+    .frase-decorativa {
+        font-size: 13px;
+    }
+
+}
+
+
+/* SEÇÃO DE SERVIÇOS */
+
+.servicos {
+    padding: 90px 6%;
+    background-color: #F8FCFB;
+}
+
+.titulo-secao {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.subtitulo {
+    color: #39AAA0;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.titulo-secao h2 {
+    color: #183B50;
+    font-size: 34px;
+    margin: 15px 0;
+}
+
+.titulo-secao p {
+    color: #82939B;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.servicos-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card-servico {
+    background-color: #FFFFFF;
+    padding: 35px 28px;
+    border: 1px solid #E5F2EF;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(24, 59, 80, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-servico:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(24, 59, 80, 0.10);
+}
+
+.servico-icone {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    background-color: #DDF5F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.servico-icone span {
+    color: #35AAA0;
+    font-size: 35px;
+}
+
+.card-servico h3 {
+    color: #183B50;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.card-servico p {
+    color: #82939B;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.card-servico a {
+    color: #35AAA0;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card-servico a:hover {
+    color: #183B50;
+}
+
+/* RESPONSIVIDADE DOS SERVIÇOS */
+
+@media (max-width: 850px) {
+
+    .servicos-lista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .servicos {
+        padding: 65px 6%;
+    }
+
+    .servicos-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-secao h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* SOBRE A CLINICA */
+
+.sobre {
+    padding: 100px 6%;
+    background-color: #FFFFFF;
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+/* ÁREA VISUAL */
+
+.sobre-visual {
+    position: relative;
+    padding: 20px;
+}
+
+.imagem-clinica {
+    min-height: 390px;
+    border-radius: 25px;
+    background: linear-gradient(
+        145deg,
+        #C8EEE6,
+        #EAF8F5,
+        #A5DFD5
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(24, 59, 80, 0.08);
+}
+
+.simbolo-clinica {
+    width: 90px;
+    height: 90px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    color: #39AAA0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.imagem-clinica h3 {
+    color: #183B50;
+    font-size: 25px;
+}
+
+.imagem-clinica p {
+    color: #537B7B;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* CARTÃO SOBREPOSTO */
+
+.selo-sobre {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    background-color: #FFFFFF;
+    padding: 18px 22px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 25px rgba(24, 59, 80, 0.12);
+}
+
+.selo-sobre > span {
+    color: #39AAA0;
+    font-size: 35px;
+}
+
+.selo-sobre strong {
+    color: #183B50;
+    font-size: 13px;
+}
+
+.selo-sobre p {
+    color: #82939B;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* TEXTO INSTITUCIONAL */
+
+.sobre-texto h2 {
+    color: #183B50;
+    font-size: 36px;
+    line-height: 1.3;
+    margin: 18px 0;
+}
+
+.sobre-texto h2 span {
+    color: #39AAA0;
+}
+
+.sobre-texto > p {
+    color: #82939B;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.sobre-diferenciais {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 28px 0;
+}
+
+.diferencial {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #526A78;
+    font-size: 14px;
+}
+
+.diferencial span {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #DDF5F0;
+    color: #319D93;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+
+    .sobre-diferenciais {
+        align-items: flex-start;
+        width: fit-content;
+        margin: 28px auto;
+    }
+
+    .sobre-visual {
+        max-width: 550px;
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .sobre {
+        padding: 65px 6%;
+    }
+
+    .imagem-clinica {
+        min-height: 300px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 29px;
+    }
+
+    .selo-sobre {
+        right: 0;
+    }
+
+}
+
+/* RODAPÉ */
+
+.rodape {
+    background-color: #153D50;
+    color: #FFFFFF;
+    padding: 65px 6% 0;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 50px;
+}
+
+.rodape-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rodape-marca .logo {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.rodape-marca .logo strong {
+    color: #75D5C8;
+}
+
+.rodape-marca p {
+    color: #C1D7D9;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 270px;
+}
+
+.rodape-coluna h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.rodape-coluna > a:not(.logo),
+.rodape-coluna > p {
+    color: #C1D7D9;
+    font-size: 13px;
+    text-decoration: none;
+    line-height: 1.7;
+    transition: 0.3s;
+}
+
+.rodape-coluna > a:not(.logo):hover {
+    color: #75D5C8;
+    padding-left: 5px;
+}
+
+/* PARTE FINAL */
+
+.rodape-final {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.rodape-final p {
+    color: #AFC6CA;
+    font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    .rodape-conteudo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .rodape {
+        padding-top: 45px;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
