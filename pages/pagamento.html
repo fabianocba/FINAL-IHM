@@ -1,101 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento</title>
-</head>
-<body>
-    <header>
-        <nav> 
-            <img src="../assets/images/logo.png" width="90"> 
-            
-            <div>
-                <a href="../index.html">Home</a>
-                <a href="#">Serviços</a>
-                <a href="#">Contato</a>
-                <a href="#">Conta Paciente</a>
+<script>
+    // Renderiza novas consultas confirmadas após o pagamento
+    const listaContainer = document.querySelector(".lista-consultas");
+    const consultasSalvas = JSON.parse(localStorage.getItem("consultasSalvas")) || [];
+
+    consultasSalvas.forEach((item, index) => {
+        const card = document.createElement("article");
+        card.className = "card-consulta";
+        card.innerHTML = `
+            <div class="consulta-topo">
+                <span class="status-confirmado">Consulta confirmada</span>
+                <span class="consulta-codigo">#CS00${index + 3}</span>
             </div>
-        </nav>
-    </header>
+            <div class="consulta-info">
+                <div class="consulta-icone" aria-hidden="true">✚</div>
+                <div>
+                    <h3>Consulta ${item.especialidade}</h3>
+                    <p>${item.profissional}</p>
+                </div>
+            </div>
+            <div class="consulta-detalhes">
+                <div><span>Data</span><strong>${item.data}</strong></div>
+                <div><span>Horário</span><strong>${item.horario}</strong></div>
+                <div><span>Modalidade</span><strong>${item.modalidade}</strong></div>
+            </div>
+            <div class="consulta-rodape">
+                <a href="../pagamento.html" class="link-detalhes">Comprovante</a>
+                <button type="button" class="botao-cancelar">Cancelar consulta</button>
+            </div>
+        `;
+        listaContainer.appendChild(card);
+    });
 
-    <section class="banner">
-        <h1>Pagamento</h1>
-        <p>Confira os dados da consulta e escolha a forma de pagamento</p>
-    </section>
+    // Envia dados do formulário para a tela de pagamento
+    const formAg = document.getElementById("formAgendamento");
+    if (formAg) {
+        formAg.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const selects = formAg.querySelectorAll("select");
+            const dataInput = formAg.querySelector("input[type='date']").value;
+            const partes = dataInput.split("-");
+            const dataBR = partes.length === 3 ? `${partes}/${partes}/${partes}` : dataInput;
 
-    <!--Dados do agendamento-->
-    
-    <main class="container">
-        <h2>Dados da consulta</h2>
+            const novaConsulta = {
+                especialidade: selects.value,
+                profissional: selects.value,
+                data: dataBR,
+                horario: selects.value,
+                modalidade: selects.value
+            };
 
-            <p>
-                <strong>Especialidade:</strong>
-                <span id="especialidade"></span>
-            </p>
+            localStorage.setItem("novaConsulta", JSON.stringify(novaConsulta));
+            window.location.href = "../pagamento.html";
+        });
+    }
 
-            <p>
-                <strong>Profissional:</strong>
-                <span id="profissional"></span>
-            </p>
-
-            <p>
-                <strong>Data:</strong>
-                <span id="data-consulta"></span>
-            </p>
-
-            <p>
-                <strong>Horário:</strong>
-                <span id="horario"></span>
-            </p>
-
-        </section>
-
-        <!--Formas de pagamento-->
-
-        <section class="formas-pagamento">
-
-            <h2>Formas de pagamento</h2>
-
-            <p>Selecione uma opção:</p>
-
-            <label>
-                <input type="radio" name="pagamento" value="pix">
-                Pix
-            </label>
-
-            <label>
-                <input type="radio" name="pagamento" value="credito">
-                Cartão de crédito
-            </label>
-
-            <label>
-                <input type="radio" name="pagamento" value="dinheiro">
-                Pagamento Presencial (Pague diretamente na clínica em até 5 dias após a confirmação do agendamento)
-            </label>
-
-        </section>
-
-        <!--Valor da consulta e confirmação-->
-        <section class="valor-consulta">
-
-            <h2>Valor da consulta:</h2>
-
-            <p id="valor-total"></p>
-
-            <button type="button" id="btn-confirmar">
-                Confirmar agendamento
-            </button>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <img src="../assets/images/logo.png" width="100">
-    </footer>
-
-    </main>
-
-</body>
-</html>
+    // Cancela consulta com confirmação
+    listaContainer.addEventListener("click", function(e) {
+        if (e.target.classList.contains("botao-cancelar")) {
+            if (confirm("Deseja realmente cancelar esta consulta?")) {
+                e.target.closest(".card-consulta").remove();
+            }
+        }
+    });
+</script>
