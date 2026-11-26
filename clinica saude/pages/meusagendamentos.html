@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos | Clínica Saúde+</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container navegacao">
+            <a href="../index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">✚</span>
+                <span>Clínica <strong>Saúde+</strong></span>
+            </a>
+
+            <nav class="menu" aria-label="Menu principal">
+                <a href="../index.html">Início</a>
+                <a href="../index.html#servicos">Serviços</a>
+                <a href="../index.html#sobre">Sobre nós</a>
+                <a href="#contato">Contato</a>
+                <a href="perfil.html">Minha Conta</a>
+                <a href="login.html" id="linkAuth">Entrar</a>
+            </nav>
+
+            <a href="meusagendamentos.html" class="botao-agendar ativo">
+                Meus agendamentos
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="pagina-agendamentos">
+            <div class="container">
+                <div class="titulo-agendamentos">
+                    <span class="subtitulo">ORGANIZE SEU CUIDADO</span>
+                    <h1>Meus agendamentos</h1>
+                    <p>Acompanhe suas consultas e cuide da sua saúde com praticidade e tranquilidade.</p>
+                </div>
+
+                <div class="acoes-agendamento">
+                    <div>
+                        <h2>Suas consultas</h2>
+                        <p>Visualize, pague ou acompanhe seus agendamentos.</p>
+                    </div>
+                    <a href="#novo-agendamento" class="botao-principal">+ Novo agendamento</a>
+                </div>
+
+                <div class="lista-consultas" id="listaConsultas">
+                    <article class="card-consulta">
+                        <div class="consulta-topo">
+                            <span class="status-confirmado">Consulta confirmada</span>
+                            <span class="consulta-codigo">#CS001</span>
+                        </div>
+                        <div class="consulta-info">
+                            <div class="consulta-icone" aria-hidden="true">✚</div>
+                            <div>
+                                <h3>Consulta Clínica Geral</h3>
+                                <p>Dr. João Martins</p>
+                            </div>
+                        </div>
+                        <div class="consulta-detalhes">
+                            <div><span>Data</span><strong>28/11/2026</strong></div>
+                            <div><span>Horário</span><strong>09:30</strong></div>
+                            <div><span>Modalidade</span><strong>Presencial</strong></div>
+                        </div>
+                        <div class="consulta-rodape">
+                            <a href="pagamento.html" class="link-detalhes" data-esp="Clínica Geral" data-prof="Dr. João Martins" data-data="28/11/2026" data-hora="09:30">Ver detalhes / Pagamento</a>
+                            <button type="button" class="botao-cancelar">Cancelar consulta</button>
+                        </div>
+                    </article>
+
+                    <article class="card-consulta">
+                        <div class="consulta-topo">
+                            <span class="status-pendente">Aguardando pagamento</span>
+                            <span class="consulta-codigo">#CS002</span>
+                        </div>
+                        <div class="consulta-info">
+                            <div class="consulta-icone" aria-hidden="true">♡</div>
+                            <div>
+                                <h3>Consulta Cardiologia</h3>
+                                <p>Dra. Mariana Costa</p>
+                            </div>
+                        </div>
+                        <div class="consulta-detalhes">
+                            <div><span>Data</span><strong>02/12/2026</strong></div>
+                            <div><span>Horário</span><strong>14:00</strong></div>
+                            <div><span>Modalidade</span><strong>Online</strong></div>
+                        </div>
+                        <div class="consulta-rodape">
+                            <a href="pagamento.html" class="link-detalhes" data-esp="Cardiologia" data-prof="Dra. Mariana Costa" data-data="02/12/2026" data-hora="14:00">Realizar pagamento →</a>
+                            <button type="button" class="botao-cancelar">Cancelar consulta</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="novo-agendamento" id="novo-agendamento">
+            <div class="container">
+                <div class="titulo-secao">
+                    <span class="subtitulo">É SIMPLES CUIDAR DE VOCÊ</span>
+                    <h2>Agende sua consulta</h2>
+                    <p>Preencha as informações abaixo para solicitar seu atendimento.</p>
+                </div>
+
+                <div class="formulario-card">
+                    <form id="formAgendamento">
+                        <div class="campo-formulario">
+                            <label for="especialidade">Especialidade médica</label>
+                            <select id="especialidade" required>
+                                <option value="">Selecione uma especialidade</option>
+                                <option value="Clínica Geral">Clínica Geral</option>
+                                <option value="Cardiologia">Cardiologia</option>
+                                <option value="Dermatologia">Dermatologia</option>
+                                <option value="Ginecologia">Ginecologia</option>
+                                <option value="Pediatria">Pediatria</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="profissional">Profissional</label>
+                            <select id="profissional" required>
+                                <option value="">Selecione um profissional</option>
+                                <option value="Dr. João Martins">Dr. João Martins</option>
+                                <option value="Dra. Mariana Costa">Dra. Mariana Costa</option>
+                                <option value="Dra. Ana Oliveira">Dra. Ana Oliveira</option>
+                            </select>
+                        </div>
+
+                        <div class="campos-linha">
+                            <div class="campo-formulario">
+                                <label for="dataConsulta">Data da consulta</label>
+                                <input type="date" id="dataConsulta" required>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="horario">Horário</label>
+                                <select id="horario" required>
+                                    <option value="">Selecione</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="modalidade">Modalidade de atendimento</label>
+                            <select id="modalidade" required>
+                                <option value="">Selecione a modalidade</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Online">Online</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="botao-enviar">Solicitar agendamento →</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="container rodape-conteudo">
+            <div class="rodape-coluna rodape-marca">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icone" aria-hidden="true">✚</span>
+                    <span>Clínica <strong>Saúde+</strong></span>
+                </a>
+                <p>
+                    Cuidar de você é nossa prioridade.
+                    Saúde, acolhimento e qualidade em
+                    cada atendimento.
+                </p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Navegação</h3>
+                <a href="../index.html">Início</a>
+                <a href="../index.html#servicos">Nossos serviços</a>
+                <a href="../index.html#sobre">Sobre a clínica</a>
+                <a href="meusagendamentos.html">Meus agendamentos</a>
+                <a href="perfil.html">Conta Paciente</a>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Atendimento</h3>
+                <p>Segunda a sexta</p>
+                <p>08h às 18h</p>
+                <p>Atendimento presencial e online</p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Entre em contato</h3>
+                <p>Estamos aqui para cuidar de você.</p>
+                <a href="#">Voltar ao início ↑</a>
+            </div>
+        </div>
+
+        <div class="rodape-base">
+            <div class="container">
+                <p>© 2026 Clínica Saúde+. Todos os direitos reservados.</p>
+                <p>Desenvolvido com cuidado e dedicação.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts/app.js"></script>
+</body>
+</html>

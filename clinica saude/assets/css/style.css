@@ -1,0 +1,826 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5FBF9;
+    color: #183B50;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 20px 6%;
+    box-shadow: 0 2px 15px rgba(24, 59, 80, 0.06);
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #183B50;
+    font-size: 21px;
+    white-space: nowrap;
+}
+
+.logo strong {
+    color: #43AAA1;
+}
+
+.logo-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: #DFF5F0;
+    color: #319D93;
+    font-size: 25px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #526A78;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #319D93;
+    font-weight: bold;
+}
+
+.botao-agendar {
+    background-color: #43AAA1;
+    color: #FFFFFF;
+    padding: 13px 21px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.botao-agendar:hover,
+.botao-agendar.ativo {
+    background-color: #318F87;
+}
+
+/* HERO (HOME E LOGIN) */
+.hero {
+    padding: 75px 6%;
+}
+
+.hero-conteudo {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.selo-campanha {
+    display: inline-block;
+    background-color: #DFF5F0;
+    color: #319D93;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-texto h1 {
+    font-size: 46px;
+    line-height: 1.2;
+    color: #183B50;
+    margin-bottom: 20px;
+}
+
+.hero-texto h1 span {
+    display: block;
+    color: #39AAA0;
+}
+
+.hero-texto p {
+    color: #6B7F8A;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 520px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.botao-principal {
+    background-color: #39AAA0;
+    color: #FFFFFF;
+    padding: 15px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #288C84;
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    background-color: #FFFFFF;
+    color: #183B50;
+    padding: 15px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid #DDEAE6;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.botao-secundario:hover {
+    border-color: #39AAA0;
+    color: #39AAA0;
+}
+
+.hero-visual {
+    position: relative;
+    background: linear-gradient(135deg, #DFF5F0, #EAF7F4);
+    border-radius: 28px;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+    border: 1px solid #D3ECE6;
+}
+
+.icone-medico {
+    width: 110px;
+    height: 110px;
+    background-color: #FFFFFF;
+    color: #39AAA0;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+    box-shadow: 0 15px 35px rgba(24, 59, 80, 0.08);
+    margin-bottom: 25px;
+}
+
+.cartao-cuidado {
+    background-color: #FFFFFF;
+    padding: 18px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(24, 59, 80, 0.06);
+    margin-bottom: 18px;
+}
+
+.cartao-cuidado .coracao {
+    width: 44px;
+    height: 44px;
+    background-color: #DFF5F0;
+    color: #39AAA0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.cartao-cuidado p {
+    font-size: 13px;
+    color: #82939B;
+    margin-top: 3px;
+}
+
+.frase-decorativa {
+    color: #319D93;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* LOGIN CARD */
+.card-login {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid #E5F2EF;
+    box-shadow: 0 10px 35px rgba(24, 59, 80, 0.06);
+    max-width: 460px;
+}
+
+.botoes-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.botoes-login .botao-secundario {
+    width: 100%;
+    text-align: center;
+}
+
+/* BENEFÍCIOS */
+.beneficios {
+    padding: 35px 6%;
+    background-color: #FFFFFF;
+    border-top: 1px solid #EDF3F1;
+    border-bottom: 1px solid #EDF3F1;
+}
+
+.beneficios-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.beneficio span {
+    width: 48px;
+    height: 48px;
+    background-color: #DFF5F0;
+    color: #39AAA0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.beneficio p {
+    color: #82939B;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* SERVIÇOS E SOBRE */
+.servicos,
+.sobre {
+    padding: 80px 6%;
+}
+
+.sobre {
+    background-color: #FFFFFF;
+}
+
+.subtitulo {
+    color: #39AAA0;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.titulo-secao {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.titulo-secao h2 {
+    color: #183B50;
+    font-size: 34px;
+    margin: 14px 0;
+}
+
+.titulo-secao p {
+    color: #82939B;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.servicos-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card-servico {
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid #E5F2EF;
+    box-shadow: 0 5px 20px rgba(24, 59, 80, 0.04);
+}
+
+.servico-icone {
+    width: 52px;
+    height: 52px;
+    background-color: #DFF5F0;
+    color: #39AAA0;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card-servico h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.card-servico p {
+    color: #6B7F8A;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-servico a {
+    color: #39AAA0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.imagem-clinica {
+    background: linear-gradient(135deg, #39AAA0, #288C84);
+    color: #FFFFFF;
+    padding: 50px 30px;
+    border-radius: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.simbolo-clinica {
+    font-size: 52px;
+    margin-bottom: 12px;
+}
+
+.selo-sobre {
+    background-color: #F5FBF9;
+    padding: 18px 22px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid #E5F2EF;
+}
+
+.selo-sobre span {
+    font-size: 24px;
+    color: #39AAA0;
+}
+
+.sobre-texto h2 {
+    font-size: 34px;
+    margin: 14px 0 20px;
+}
+
+.sobre-texto h2 span {
+    color: #39AAA0;
+}
+
+.sobre-texto p {
+    color: #6B7F8A;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.sobre-diferenciais {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 22px 0 28px;
+}
+
+.diferencial {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.diferencial span {
+    color: #39AAA0;
+    font-weight: bold;
+}
+
+/* AGENDAMENTOS, PAGAMENTO E PERFIL */
+.pagina-agendamentos {
+    padding: 75px 6%;
+    min-height: 500px;
+}
+
+.titulo-agendamentos {
+    margin-bottom: 45px;
+}
+
+.titulo-agendamentos h1 {
+    color: #183B50;
+    font-size: 38px;
+    margin: 14px 0;
+}
+
+.titulo-agendamentos p {
+    color: #82939B;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.acoes-agendamento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #E5F2EF;
+    box-shadow: 0 5px 20px rgba(24, 59, 80, 0.04);
+}
+
+.lista-consultas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card-consulta {
+    background-color: #FFFFFF;
+    border: 1px solid #E5F2EF;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(24, 59, 80, 0.04);
+}
+
+.consulta-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.status-confirmado,
+.status-pendente {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status-confirmado {
+    background-color: #DDF5E8;
+    color: #27845D;
+}
+
+.status-pendente {
+    background-color: #FFF2D8;
+    color: #A87922;
+}
+
+.consulta-codigo {
+    color: #A0AFB5;
+    font-size: 12px;
+}
+
+.consulta-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.consulta-icone {
+    width: 55px;
+    height: 55px;
+    background-color: #DDF5F0;
+    color: #39AAA0;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.consulta-detalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    border-top: 1px solid #EDF3F1;
+    border-bottom: 1px solid #EDF3F1;
+    padding: 18px 0;
+}
+
+.consulta-detalhes span {
+    color: #9AAAB0;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.consulta-detalhes strong {
+    color: #526A78;
+    font-size: 13px;
+}
+
+.consulta-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.link-detalhes {
+    color: #39AAA0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.botao-cancelar {
+    background-color: transparent;
+    border: 1px solid #F0D8D8;
+    color: #C16F6F;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.novo-agendamento {
+    padding: 85px 6%;
+    background-color: #EAF7F4;
+}
+
+.formulario-card {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E5F2EF;
+    box-shadow: 0 10px 35px rgba(24, 59, 80, 0.06);
+}
+
+#formAgendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-formulario label {
+    color: #183B50;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo-formulario input,
+.campo-formulario select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #DDEAE6;
+    border-radius: 10px;
+    background-color: #FBFEFD;
+    color: #526A78;
+    font-size: 14px;
+    outline: none;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+    border-color: #39AAA0;
+    box-shadow: 0 0 0 3px rgba(57, 170, 160, 0.10);
+}
+
+.campos-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.botao-enviar {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #39AAA0;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-enviar:hover {
+    background-color: #288C84;
+}
+
+/* PAGAMENTO ESPECÍFICO */
+.dados-consulta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    background-color: #F5FBF9;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #E5F2EF;
+    margin-bottom: 28px;
+}
+
+.dado-item span {
+    display: block;
+    color: #9AAAB0;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.dado-item strong {
+    color: #183B50;
+    font-size: 15px;
+}
+
+.secao-pagamento-titulo {
+    color: #183B50;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.opcao-radio {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #DDEAE6;
+    border-radius: 12px;
+    background-color: #FBFEFD;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.opcao-radio:hover {
+    border-color: #39AAA0;
+    background-color: #F5FBF9;
+}
+
+.opcao-radio input[type="radio"] {
+    margin-top: 3px;
+    accent-color: #39AAA0;
+}
+
+.opcao-radio strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.opcao-radio small {
+    color: #82939B;
+    font-size: 13px;
+}
+
+.resumo-valor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 18px;
+    border-top: 1px solid #EDF3F1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.resumo-valor span {
+    color: #39AAA0;
+    font-size: 24px;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: #183B50;
+    color: #FFFFFF;
+    padding: 60px 6% 25px;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.rodape .logo {
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.rodape-coluna h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.rodape-coluna p,
+.rodape-coluna a {
+    display: block;
+    color: #B8CAD4;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.rodape-coluna a:hover {
+    color: #43AAA1;
+}
+
+.rodape-base {
+    padding-top: 22px;
+    text-align: center;
+    color: #9BB1BD;
+    font-size: 13px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .hero-conteudo,
+    .sobre-conteudo,
+    .beneficios-lista,
+    .servicos-lista,
+    .lista-consultas,
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-texto h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    .campos-linha,
+    .dados-consulta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-agendamento {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

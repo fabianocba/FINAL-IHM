@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta | Clínica Saúde+</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container navegacao">
+            <a href="../index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">✚</span>
+                <span>Clínica <strong>Saúde+</strong></span>
+            </a>
+
+            <nav class="menu" aria-label="Menu principal">
+                <a href="../index.html">Início</a>
+                <a href="../index.html#servicos">Serviços</a>
+                <a href="../index.html#sobre">Sobre nós</a>
+                <a href="#contato">Contato</a>
+                <a href="perfil.html" class="ativo">Minha Conta</a>
+                <a href="login.html" id="linkAuth">Entrar</a>
+            </nav>
+
+            <a href="meusagendamentos.html" class="botao-agendar">
+                Meus agendamentos
+            </a>
+        </div>
+    </header>
+
+    <main class="pagina-agendamentos">
+        <div class="container">
+            <div class="titulo-agendamentos">
+                <span class="subtitulo">ÁREA DO PACIENTE</span>
+                <h1>Meu Perfil</h1>
+                <p>Gerencie seus dados cadastrais e informações de contato para seus atendimentos.</p>
+            </div>
+
+            <div class="formulario-card">
+                <div class="consulta-info" style="border-bottom: 1px solid #EDF3F1; padding-bottom: 20px;">
+                    <div class="consulta-icone" aria-hidden="true">♡</div>
+                    <div>
+                        <h3 id="perfilNomeExibicao">Paciente Saúde+</h3>
+                        <p id="perfilEmailExibicao">paciente@clinicasaudemais.com.br</p>
+                    </div>
+                </div>
+
+                <form id="formPerfil">
+                    <div class="campo-formulario" style="margin-bottom: 18px;">
+                        <label for="perfilNome">Nome completo</label>
+                        <input type="text" id="perfilNome" value="Paciente Saúde+" required>
+                    </div>
+
+                    <div class="campos-linha" style="margin-bottom: 18px;">
+                        <div class="campo-formulario">
+                            <label for="perfilEmail">E-mail</label>
+                            <input type="email" id="perfilEmail" value="paciente@clinicasaudemais.com.br" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="perfilTelefone">Telefone / WhatsApp</label>
+                            <input type="tel" id="perfilTelefone" placeholder="(77) 99999-0000" value="(77) 99999-0000">
+                        </div>
+                    </div>
+
+                    <div class="campos-linha" style="margin-bottom: 24px;">
+                        <div class="campo-formulario">
+                            <label for="perfilNascimento">Data de nascimento</label>
+                            <input type="date" id="perfilNascimento" value="1998-05-15">
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="perfilConvenio">Convênio / Atendimento</label>
+                            <select id="perfilConvenio">
+                                <option value="Particular">Particular</option>
+                                <option value="Unimed">Unimed</option>
+                                <option value="Bradesco Saúde">Bradesco Saúde</option>
+                                <option value="SUS">SUS</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="botao-enviar">Salvar alterações →</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="container rodape-conteudo">
+            <div class="rodape-coluna rodape-marca">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icone" aria-hidden="true">✚</span>
+                    <span>Clínica <strong>Saúde+</strong></span>
+                </a>
+                <p>
+                    Cuidar de você é nossa prioridade.
+                    Saúde, acolhimento e qualidade em
+                    cada atendimento.
+                </p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Navegação</h3>
+                <a href="../index.html">Início</a>
+                <a href="../index.html#servicos">Nossos serviços</a>
+                <a href="../index.html#sobre">Sobre a clínica</a>
+                <a href="meusagendamentos.html">Meus agendamentos</a>
+                <a href="perfil.html">Conta Paciente</a>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Atendimento</h3>
+                <p>Segunda a sexta</p>
+                <p>08h às 18h</p>
+                <p>Atendimento presencial e online</p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Entre em contato</h3>
+                <p>Estamos aqui para cuidar de você.</p>
+                <a href="#">Voltar ao início ↑</a>
+            </div>
+        </div>
+
+        <div class="rodape-base">
+            <div class="container">
+                <p>© 2026 Clínica Saúde+. Todos os direitos reservados.</p>
+                <p>Desenvolvido com cuidado e dedicação.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts/app.js"></script>
+</body>
+</html>

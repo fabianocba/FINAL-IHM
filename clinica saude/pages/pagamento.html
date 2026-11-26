@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento | Clínica Saúde+</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container navegacao">
+            <a href="../index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">✚</span>
+                <span>Clínica <strong>Saúde+</strong></span>
+            </a>
+
+            <nav class="menu" aria-label="Menu principal">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+                <a href="perfil.html">Conta Paciente</a>
+                <a href="login.html" id="linkAuth">Entrar</a>
+            </nav>
+
+            <a href="meusagendamentos.html" class="botao-agendar">
+                Meus agendamentos
+            </a>
+        </div>
+    </header>
+
+    <main class="pagina-agendamentos">
+        <div class="container">
+            <div class="titulo-agendamentos">
+                <span class="subtitulo">FINALIZAÇÃO DE CONSULTA</span>
+                <h1>Pagamento</h1>
+                <p>Confira os dados da consulta e escolha a forma de pagamento.</p>
+            </div>
+
+            <div class="formulario-card">
+                <h2 class="secao-pagamento-titulo">Dados da consulta</h2>
+
+                <div class="dados-consulta-grid">
+                    <div class="dado-item">
+                        <span>Especialidade:</span>
+                        <strong id="pagEspecialidade">Cardiologia</strong>
+                    </div>
+
+                    <div class="dado-item">
+                        <span>Profissional:</span>
+                        <strong id="pagProfissional">Dra. Mariana Costa</strong>
+                    </div>
+
+                    <div class="dado-item">
+                        <span>Data:</span>
+                        <strong id="pagData">02/12/2026</strong>
+                    </div>
+
+                    <div class="dado-item">
+                        <span>Horário:</span>
+                        <strong id="pagHorario">14:00</strong>
+                    </div>
+                </div>
+
+                <form id="formPagamento">
+                    <h2 class="secao-pagamento-titulo">Formas de pagamento</h2>
+                    <p style="color: #82939B; font-size: 13px; margin-bottom: 14px;">Selecione uma opção:</p>
+
+                    <label class="opcao-radio">
+                        <input type="radio" name="forma_pagamento" value="pix" required checked>
+                        <div>
+                            <strong>Pix</strong>
+                            <small>Aprovação imediata via QR Code ou chave copia e cola.</small>
+                        </div>
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input type="radio" name="forma_pagamento" value="credito" required>
+                        <div>
+                            <strong>Cartão de crédito</strong>
+                            <small>Pagamento online seguro em até 3x sem juros.</small>
+                        </div>
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input type="radio" name="forma_pagamento" value="dinheiro" required>
+                        <div>
+                            <strong>Pagamento Presencial</strong>
+                            <small>Pague diretamente na clínica em até 5 dias após a confirmação do agendamento.</small>
+                        </div>
+                    </label>
+
+                    <div class="resumo-valor">
+                        <div>Valor da consulta:</div>
+                        <span>R$ 180,00</span>
+                    </div>
+
+                    <button type="submit" class="botao-enviar">
+                        Confirmar agendamento →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="container rodape-conteudo">
+            <div class="rodape-coluna rodape-marca">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icone" aria-hidden="true">✚</span>
+                    <span>Clínica <strong>Saúde+</strong></span>
+                </a>
+                <p>
+                    Cuidar de você é nossa prioridade.
+                    Saúde, acolhimento e qualidade em
+                    cada atendimento.
+                </p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Navegação</h3>
+                <a href="../index.html">Início</a>
+                <a href="../index.html#servicos">Nossos serviços</a>
+                <a href="../index.html#sobre">Sobre a clínica</a>
+                <a href="meusagendamentos.html">Meus agendamentos</a>
+                <a href="perfil.html">Conta Paciente</a>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Atendimento</h3>
+                <p>Segunda a sexta</p>
+                <p>08h às 18h</p>
+                <p>Atendimento presencial e online</p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Entre em contato</h3>
+                <p>Estamos aqui para cuidar de você.</p>
+                <a href="#">Voltar ao início ↑</a>
+            </div>
+        </div>
+
+        <div class="rodape-base">
+            <div class="container">
+                <p>© 2026 Clínica Saúde+. Todos os direitos reservados.</p>
+                <p>Desenvolvido com cuidado e dedicação.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/scripts/app.js"></script>
+</body>
+</html>
