@@ -3,68 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Clínica Saúde+</title>
+    <title>Pagamento | Clínica Saúde+</title>
+    <link rel="stylesheet" href="figma/agendamentos.css">
     <link rel="stylesheet" href="figma/home.css">
     <style>
-        .card-login {
-            background-color: #FFFFFF;
-            padding: 35px;
-            border-radius: 20px;
+        .dados-consulta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            background-color: #F5FBF9;
+            padding: 22px;
+            border-radius: 14px;
             border: 1px solid #E5F2EF;
-            box-shadow: 0 10px 35px rgba(24, 59, 80, 0.06);
-            margin-top: 25px;
-            max-width: 460px;
+            margin-bottom: 30px;
         }
 
-        .campo-grupo {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 18px;
+        .dado-item span {
+            display: block;
+            color: #9AAAB0;
+            font-size: 12px;
+            margin-bottom: 5px;
         }
 
-        .campo-grupo label {
+        .dado-item strong {
             color: #183B50;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .campo-grupo input {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #DDEAE6;
-            border-radius: 10px;
-            background-color: #FBFEFD;
-            color: #526A78;
-            font-size: 14px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .campo-grupo input:focus {
-            border-color: #39AAA0;
-            box-shadow: 0 0 0 3px rgba(57, 170, 160, 0.10);
-        }
-
-        .botoes-login {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        .botoes-login .botao-principal,
-        .botoes-login .botao-secundario {
-            width: 100%;
-            text-align: center;
-            border: none;
-            cursor: pointer;
             font-size: 15px;
         }
 
-        .botoes-login .botao-secundario {
+        .secao-pagamento-titulo {
+            color: #183B50;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .opcao-radio {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
             border: 1px solid #DDEAE6;
+            border-radius: 12px;
+            background-color: #FBFEFD;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .opcao-radio:hover {
+            border-color: #39AAA0;
             background-color: #F5FBF9;
+        }
+
+        .opcao-radio input[type="radio"] {
+            margin-top: 3px;
+            accent-color: #39AAA0;
+            width: 16px;
+            height: 16px;
+        }
+
+        .opcao-radio strong {
+            display: block;
+            color: #183B50;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        .opcao-radio small {
+            color: #82939B;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .resumo-valor {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px solid #EDF3F1;
+            font-size: 18px;
+            font-weight: bold;
+            color: #183B50;
+        }
+
+        .resumo-valor span {
+            color: #39AAA0;
+            font-size: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .dados-consulta-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -78,10 +108,10 @@
             </a>
 
             <nav class="menu" aria-label="Menu principal">
-                <a href="figma/index.html">Início</a>
+                <a href="figma/index.html">Home</a>
                 <a href="figma/index.html#servicos">Serviços</a>
-                <a href="figma/index.html#sobre">Sobre nós</a>
-                <a href="#contato">Contato</a>
+                <a href="figma/index.html#contato">Contato</a>
+                <a href="figma/meusagendamentos.html">Conta Paciente</a>
             </nav>
 
             <a href="figma/meusagendamentos.html" class="botao-agendar">
@@ -90,100 +120,78 @@
         </div>
     </header>
 
-    <main>
-        <section class="hero" id="inicio">
-            <div class="container hero-conteudo">
+    <main class="pagina-agendamentos">
+        <div class="container">
+            <div class="titulo-agendamentos">
+                <span class="subtitulo">FINALIZAÇÃO DE CONSULTA</span>
+                <h1>Pagamento</h1>
+                <p>Confira os dados da consulta e escolha a forma de pagamento.</p>
+            </div>
 
-                <div class="hero-texto">
-                    <span class="selo-campanha">
-                        <span aria-hidden="true">✦</span> Acesso ao portal do paciente
-                    </span>
+            <div class="formulario-card">
+                <h2 class="secao-pagamento-titulo">Dados da consulta</h2>
 
-                    <h1>
-                        Bem-vindo!
-                        <span>Faça login para continuar.</span>
-                    </h1>
+                <div class="dados-consulta-grid">
+                    <div class="dado-item">
+                        <span>Especialidade:</span>
+                        <strong id="pagEspecialidade">Cardiologia</strong>
+                    </div>
 
-                    <p>
-                        Cuidar de você é a nossa prioridade. Entre na sua conta para
-                        acompanhar seus agendamentos e atendimentos.
-                    </p>
+                    <div class="dado-item">
+                        <span>Profissional:</span>
+                        <strong id="pagProfissional">Dra. Mariana Costa</strong>
+                    </div>
 
-                    <div class="card-login">
-                        <form id="formLogin">
-                            <div class="campo-grupo">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-                            </div>
+                    <div class="dado-item">
+                        <span>Data:</span>
+                        <strong id="pagData">02/12/2026</strong>
+                    </div>
 
-                            <div class="campo-grupo">
-                                <label for="senha">Senha</label>
-                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                            </div>
-
-                            <div class="botoes-login">
-                                <button type="submit" class="botao-principal">
-                                    Entrar <span aria-hidden="true">→</span>
-                                </button>
-
-                                <a href="figma/index.html" class="botao-secundario" onclick="loginWhatsApp()">
-                                    Entrar com WhatsApp
-                                </a>
-                            </div>
-                        </form>
+                    <div class="dado-item">
+                        <span>Horário:</span>
+                        <strong id="pagHorario">14:00</strong>
                     </div>
                 </div>
 
-                <div class="hero-visual">
-                    <div class="circulo-decorativo"></div>
+                <form id="formPagamento">
+                    <h2 class="secao-pagamento-titulo">Formas de pagamento</h2>
+                    <p style="color: #82939B; font-size: 13px; margin-bottom: 14px;">Selecione uma opção:</p>
 
-                    <div class="icone-medico">
-                        <span aria-hidden="true">✚</span>
-                    </div>
-
-                    <div class="cartao-cuidado">
-                        <span class="coracao" aria-hidden="true">♡</span>
+                    <label class="opcao-radio">
+                        <input type="radio" name="forma_pagamento" value="pix" required checked>
                         <div>
-                            <strong>Cuidado completo</strong>
-                            <p>Sua saúde merece atenção.</p>
+                            <strong>Pix</strong>
+                            <small>Aprovação imediata via QR Code ou chave copia e cola.</small>
                         </div>
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input type="radio" name="forma_pagamento" value="credito" required>
+                        <div>
+                            <strong>Cartão de crédito</strong>
+                            <small>Pagamento online seguro em até 3x sem juros.</small>
+                        </div>
+                    </label>
+
+                    <label class="opcao-radio">
+                        <input type="radio" name="forma_pagamento" value="dinheiro" required>
+                        <div>
+                            <strong>Pagamento Presencial</strong>
+                            <small>Pague diretamente na clínica em até 5 dias após a confirmação do agendamento.</small>
+                        </div>
+                    </label>
+
+                    <div class="resumo-valor">
+                        <div>Valor da consulta:</div>
+                        <span>R$ 180,00</span>
                     </div>
 
-                    <span class="frase-decorativa">
-                        Cuidar é um ato de amor!
-                    </span>
-                </div>
-
+                    <button type="submit" class="botao-enviar">
+                        Confirmar agendamento →
+                    </button>
+                </form>
             </div>
-        </section>
-
-        <section class="beneficios" aria-label="Diferenciais da clínica">
-            <div class="container beneficios-lista">
-                <div class="beneficio">
-                    <span aria-hidden="true">♡</span>
-                    <div>
-                        <strong>Atendimento humanizado</strong>
-                        <p>Cuidado em cada detalhe</p>
-                    </div>
-                </div>
-
-                <div class="beneficio">
-                    <span aria-hidden="true">◷</span>
-                    <div>
-                        <strong>Agilidade</strong>
-                        <p>Mais facilidade para você</p>
-                    </div>
-                </div>
-
-                <div class="beneficio">
-                    <span aria-hidden="true">✚</span>
-                    <div>
-                        <strong>Profissionais qualificados</strong>
-                        <p>Segurança e confiança</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
     <footer class="rodape" id="contato">
@@ -218,7 +226,7 @@
             <div class="rodape-coluna">
                 <h3>Entre em contato</h3>
                 <p>Estamos aqui para cuidar de você.</p>
-                <a href="#inicio">Voltar ao início ↑</a>
+                <a href="#">Voltar ao início ↑</a>
             </div>
         </div>
 
@@ -231,15 +239,25 @@
     </footer>
 
     <script>
-        document.getElementById("formLogin").addEventListener("submit", function(e) {
-            e.preventDefault();
-            localStorage.setItem("usuarioEmail", document.getElementById("email").value);
-            window.location.href = "figma/index.html";
-        });
-
-        function loginWhatsApp() {
-            localStorage.setItem("usuarioEmail", "Acesso via WhatsApp");
+        const consultaPendente = JSON.parse(localStorage.getItem("novaConsulta"));
+        if (consultaPendente) {
+            document.getElementById("pagEspecialidade").textContent = consultaPendente.especialidade;
+            document.getElementById("pagProfissional").textContent = consultaPendente.profissional;
+            document.getElementById("pagData").textContent = consultaPendente.data;
+            document.getElementById("pagHorario").textContent = consultaPendente.horario;
         }
+
+        document.getElementById("formPagamento").addEventListener("submit", function(e) {
+            e.preventDefault();
+            if (consultaPendente) {
+                const salvas = JSON.parse(localStorage.getItem("consultasSalvas")) || [];
+                salvas.push(consultaPendente);
+                localStorage.setItem("consultasSalvas", JSON.stringify(salvas));
+                localStorage.removeItem("novaConsulta");
+            }
+            alert("Agendamento e pagamento confirmados com sucesso!");
+            window.location.href = "figma/meusagendamentos.html";
+        });
     </script>
 </body>
 </html>
