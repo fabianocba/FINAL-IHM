@@ -1,65 +1,245 @@
-<script>
-    // Renderiza novas consultas confirmadas após o pagamento
-    const listaContainer = document.querySelector(".lista-consultas");
-    const consultasSalvas = JSON.parse(localStorage.getItem("consultasSalvas")) || [];
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Clínica Saúde+</title>
+    <link rel="stylesheet" href="figma/home.css">
+    <style>
+        .card-login {
+            background-color: #FFFFFF;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #E5F2EF;
+            box-shadow: 0 10px 35px rgba(24, 59, 80, 0.06);
+            margin-top: 25px;
+            max-width: 460px;
+        }
 
-    consultasSalvas.forEach((item, index) => {
-        const card = document.createElement("article");
-        card.className = "card-consulta";
-        card.innerHTML = `
-            <div class="consulta-topo">
-                <span class="status-confirmado">Consulta confirmada</span>
-                <span class="consulta-codigo">#CS00${index + 3}</span>
+        .campo-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .campo-grupo label {
+            color: #183B50;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .campo-grupo input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #DDEAE6;
+            border-radius: 10px;
+            background-color: #FBFEFD;
+            color: #526A78;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .campo-grupo input:focus {
+            border-color: #39AAA0;
+            box-shadow: 0 0 0 3px rgba(57, 170, 160, 0.10);
+        }
+
+        .botoes-login {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .botoes-login .botao-principal,
+        .botoes-login .botao-secundario {
+            width: 100%;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .botoes-login .botao-secundario {
+            border: 1px solid #DDEAE6;
+            background-color: #F5FBF9;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container navegacao">
+            <a href="figma/index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">✚</span>
+                <span>Clínica <strong>Saúde+</strong></span>
+            </a>
+
+            <nav class="menu" aria-label="Menu principal">
+                <a href="figma/index.html">Início</a>
+                <a href="figma/index.html#servicos">Serviços</a>
+                <a href="figma/index.html#sobre">Sobre nós</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <a href="figma/meusagendamentos.html" class="botao-agendar">
+                Meus agendamentos
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="container hero-conteudo">
+
+                <div class="hero-texto">
+                    <span class="selo-campanha">
+                        <span aria-hidden="true">✦</span> Acesso ao portal do paciente
+                    </span>
+
+                    <h1>
+                        Bem-vindo!
+                        <span>Faça login para continuar.</span>
+                    </h1>
+
+                    <p>
+                        Cuidar de você é a nossa prioridade. Entre na sua conta para
+                        acompanhar seus agendamentos e atendimentos.
+                    </p>
+
+                    <div class="card-login">
+                        <form id="formLogin">
+                            <div class="campo-grupo">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                            </div>
+
+                            <div class="campo-grupo">
+                                <label for="senha">Senha</label>
+                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                            </div>
+
+                            <div class="botoes-login">
+                                <button type="submit" class="botao-principal">
+                                    Entrar <span aria-hidden="true">→</span>
+                                </button>
+
+                                <a href="figma/index.html" class="botao-secundario" onclick="loginWhatsApp()">
+                                    Entrar com WhatsApp
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="circulo-decorativo"></div>
+
+                    <div class="icone-medico">
+                        <span aria-hidden="true">✚</span>
+                    </div>
+
+                    <div class="cartao-cuidado">
+                        <span class="coracao" aria-hidden="true">♡</span>
+                        <div>
+                            <strong>Cuidado completo</strong>
+                            <p>Sua saúde merece atenção.</p>
+                        </div>
+                    </div>
+
+                    <span class="frase-decorativa">
+                        Cuidar é um ato de amor!
+                    </span>
+                </div>
+
             </div>
-            <div class="consulta-info">
-                <div class="consulta-icone" aria-hidden="true">✚</div>
-                <div>
-                    <h3>Consulta ${item.especialidade}</h3>
-                    <p>${item.profissional}</p>
+        </section>
+
+        <section class="beneficios" aria-label="Diferenciais da clínica">
+            <div class="container beneficios-lista">
+                <div class="beneficio">
+                    <span aria-hidden="true">♡</span>
+                    <div>
+                        <strong>Atendimento humanizado</strong>
+                        <p>Cuidado em cada detalhe</p>
+                    </div>
+                </div>
+
+                <div class="beneficio">
+                    <span aria-hidden="true">◷</span>
+                    <div>
+                        <strong>Agilidade</strong>
+                        <p>Mais facilidade para você</p>
+                    </div>
+                </div>
+
+                <div class="beneficio">
+                    <span aria-hidden="true">✚</span>
+                    <div>
+                        <strong>Profissionais qualificados</strong>
+                        <p>Segurança e confiança</p>
+                    </div>
                 </div>
             </div>
-            <div class="consulta-detalhes">
-                <div><span>Data</span><strong>${item.data}</strong></div>
-                <div><span>Horário</span><strong>${item.horario}</strong></div>
-                <div><span>Modalidade</span><strong>${item.modalidade}</strong></div>
-            </div>
-            <div class="consulta-rodape">
-                <a href="../pagamento.html" class="link-detalhes">Comprovante</a>
-                <button type="button" class="botao-cancelar">Cancelar consulta</button>
-            </div>
-        `;
-        listaContainer.appendChild(card);
-    });
+        </section>
+    </main>
 
-    // Envia dados do formulário para a tela de pagamento
-    const formAg = document.getElementById("formAgendamento");
-    if (formAg) {
-        formAg.addEventListener("submit", function(e) {
+    <footer class="rodape" id="contato">
+        <div class="container rodape-conteudo">
+            <div class="rodape-coluna rodape-marca">
+                <a href="figma/index.html" class="logo">
+                    <span class="logo-icone" aria-hidden="true">✚</span>
+                    <span>Clínica <strong>Saúde+</strong></span>
+                </a>
+                <p>
+                    Cuidar de você é nossa prioridade.
+                    Saúde, acolhimento e qualidade em
+                    cada atendimento.
+                </p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Navegação</h3>
+                <a href="figma/index.html">Início</a>
+                <a href="figma/index.html#servicos">Nossos serviços</a>
+                <a href="figma/index.html#sobre">Sobre a clínica</a>
+                <a href="figma/meusagendamentos.html">Meus agendamentos</a>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Atendimento</h3>
+                <p>Segunda a sexta</p>
+                <p>08h às 18h</p>
+                <p>Atendimento presencial e online</p>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Entre em contato</h3>
+                <p>Estamos aqui para cuidar de você.</p>
+                <a href="#inicio">Voltar ao início ↑</a>
+            </div>
+        </div>
+
+        <div class="rodape-base">
+            <div class="container">
+                <p>© 2026 Clínica Saúde+. Todos os direitos reservados.</p>
+                <p>Desenvolvido com cuidado e dedicação.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("formLogin").addEventListener("submit", function(e) {
             e.preventDefault();
-            const selects = formAg.querySelectorAll("select");
-            const dataInput = formAg.querySelector("input[type='date']").value;
-            const partes = dataInput.split("-");
-            const dataBR = partes.length === 3 ? `${partes}/${partes}/${partes}` : dataInput;
-
-            const novaConsulta = {
-                especialidade: selects.value,
-                profissional: selects.value,
-                data: dataBR,
-                horario: selects.value,
-                modalidade: selects.value
-            };
-
-            localStorage.setItem("novaConsulta", JSON.stringify(novaConsulta));
-            window.location.href = "../pagamento.html";
+            localStorage.setItem("usuarioEmail", document.getElementById("email").value);
+            window.location.href = "figma/index.html";
         });
-    }
 
-    // Cancela consulta com confirmação
-    listaContainer.addEventListener("click", function(e) {
-        if (e.target.classList.contains("botao-cancelar")) {
-            if (confirm("Deseja realmente cancelar esta consulta?")) {
-                e.target.closest(".card-consulta").remove();
-            }
+        function loginWhatsApp() {
+            localStorage.setItem("usuarioEmail", "Acesso via WhatsApp");
         }
-    });
-</script>
+    </script>
+</body>
+</html>
