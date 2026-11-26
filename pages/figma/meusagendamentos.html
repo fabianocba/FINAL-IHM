@@ -154,6 +154,88 @@
 </div>
 
     </section>
+     
+<section class="novo-agendamento" id="novo-agendamento">
+
+    <div class="container">
+
+        <div class="titulo-secao">
+            <span class="subtitulo">É simples cuidar de você</span>
+            <h2>Agende sua consulta</h2>
+            <p>Preencha as informações abaixo para solicitar seu atendimento.</p>
+        </div>
+
+        <div class="formulario-card">
+
+            <form id="formAgendamento">
+
+                <div class="campo-formulario">
+                    <label for="especialidade">Especialidade médica</label>
+
+                    <select id="especialidade" required>
+                        <option value="">Selecione uma especialidade</option>
+                        <option value="Clínica Geral">Clínica Geral</option>
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Dermatologia">Dermatologia</option>
+                        <option value="Ginecologia">Ginecologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="profissional">Profissional</label>
+
+                    <select id="profissional" required>
+                        <option value="">Selecione um profissional</option>
+                        <option value="Dr. João Martins">Dr. João Martins</option>
+                        <option value="Dra. Mariana Costa">Dra. Mariana Costa</option>
+                        <option value="Dra. Ana Oliveira">Dra. Ana Oliveira</option>
+                    </select>
+                </div>
+
+                <div class="campos-linha">
+
+                    <div class="campo-formulario">
+                        <label for="data">Data da consulta</label>
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="horario">Horário</label>
+                        <select id="horario" required>
+                            <option value="">Selecione</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="modalidade">Modalidade de atendimento</label>
+
+                    <select id="modalidade" required>
+                        <option value="">Selecione a modalidade</option>
+                        <option value="Presencial">Presencial</option>
+                        <option value="Online">Online</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="botao-enviar">
+                    Solicitar agendamento →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
